@@ -43,9 +43,9 @@ describe('slidingWindowMax', () => {
   it('matches a brute-force reference on random input', () => {
     const rng = new Rng(2024)
     for (let trial = 0; trial < 300; trial++) {
-      const length = rng.int(0, 60)
-      const values = Array.from({ length }, () => rng.int(0, 9))
-      const windowSize = rng.int(1, length + 2)
+      const length = rng.randomInt(0, 60)
+      const values = Array.from({ length }, () => rng.randomInt(0, 9))
+      const windowSize = rng.randomInt(1, length + 2)
       expect(slidingWindowMax(values, windowSize)).toEqual(bruteForceWindowMax(values, windowSize))
     }
   })

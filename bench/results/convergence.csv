@@ -1,0 +1,10 @@
+topology,setup,failures,avg_convergence_ms,avg_settled_ms,not_settled,avg_packets_lost,avg_control_messages,avg_missing_routes
+ring(20),link-state,10,117.8,138,0,0.8,38,0
+ring(20),DV + split horizon,10,127.6,1129.6,0,90.2,185.9,20
+ring(20),"DV, no split horizon",10,128,1130,0,68.6,225,20
+grid(6x6),link-state,10,112,117.8,0,0.2,166,0
+grid(6x6),DV + split horizon,10,107.8,1109.8,0,2.1,167.1,0
+grid(6x6),"DV, no split horizon",10,107,1109,0,0,163.3,0
+mesh(40),link-state,10,115.6,145.5,0,0.1,362,0
+mesh(40),DV + split horizon,10,116.7,1137.2,0,0.6,355.4,0
+mesh(40),"DV, no split horizon",10,116.4,1136.9,0,0,367.3,0

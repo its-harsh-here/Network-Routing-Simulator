@@ -1,0 +1,91 @@
+topology,setup,link,convergence_ms,settled_ms,packets_lost,control_messages,missing_routes
+ring(20),link-state,R9-R10,118,138,1,38,0
+ring(20),link-state,R19-R0,118,138,2,38,0
+ring(20),link-state,R7-R8,118,138,2,38,0
+ring(20),link-state,R4-R5,118,138,0,38,0
+ring(20),link-state,R5-R6,118,138,1,38,0
+ring(20),link-state,R10-R11,116,138,0,38,0
+ring(20),link-state,R12-R13,118,138,0,38,0
+ring(20),link-state,R16-R17,118,138,1,38,0
+ring(20),link-state,R18-R19,118,138,0,38,0
+ring(20),link-state,R2-R3,118,138,1,38,0
+ring(20),DV + split horizon,R9-R10,128,1130,75,191,20
+ring(20),DV + split horizon,R19-R0,128,1130,106,183,20
+ring(20),DV + split horizon,R7-R8,128,1130,78,191,20
+ring(20),DV + split horizon,R4-R5,128,1130,76,187,20
+ring(20),DV + split horizon,R5-R6,128,1130,76,188,20
+ring(20),DV + split horizon,R10-R11,128,1130,85,190,20
+ring(20),DV + split horizon,R12-R13,128,1130,105,186,20
+ring(20),DV + split horizon,R16-R17,128,1130,103,179,20
+ring(20),DV + split horizon,R18-R19,124,1126,113,177,20
+ring(20),DV + split horizon,R2-R3,128,1130,85,187,20
+ring(20),"DV, no split horizon",R9-R10,128,1130,50,226,20
+ring(20),"DV, no split horizon",R19-R0,128,1130,79,226,20
+ring(20),"DV, no split horizon",R7-R8,128,1130,59,226,20
+ring(20),"DV, no split horizon",R4-R5,128,1130,64,226,20
+ring(20),"DV, no split horizon",R5-R6,128,1130,62,226,20
+ring(20),"DV, no split horizon",R10-R11,128,1130,55,226,20
+ring(20),"DV, no split horizon",R12-R13,128,1130,73,226,20
+ring(20),"DV, no split horizon",R16-R17,128,1130,80,224,20
+ring(20),"DV, no split horizon",R18-R19,128,1130,95,218,20
+ring(20),"DV, no split horizon",R2-R3,128,1130,69,226,20
+grid(6x6),link-state,R16-R22,112,116,1,166,0
+grid(6x6),link-state,R6-R7,116,120,0,166,0
+grid(6x6),link-state,R2-R3,114,118,0,166,0
+grid(6x6),link-state,R17-R23,114,118,0,166,0
+grid(6x6),link-state,R20-R26,110,116,0,166,0
+grid(6x6),link-state,R8-R9,112,116,0,166,0
+grid(6x6),link-state,R16-R17,110,118,0,166,0
+grid(6x6),link-state,R9-R10,112,118,1,166,0
+grid(6x6),link-state,R32-R33,108,118,0,166,0
+grid(6x6),link-state,R11-R17,112,120,0,166,0
+grid(6x6),DV + split horizon,R16-R22,108,1110,5,175,0
+grid(6x6),DV + split horizon,R6-R7,110,1112,0,171,0
+grid(6x6),DV + split horizon,R2-R3,108,1110,4,176,0
+grid(6x6),DV + split horizon,R17-R23,108,1110,3,158,0
+grid(6x6),DV + split horizon,R20-R26,110,1112,7,193,0
+grid(6x6),DV + split horizon,R8-R9,106,1108,0,168,0
+grid(6x6),DV + split horizon,R16-R17,110,1112,0,171,0
+grid(6x6),DV + split horizon,R9-R10,108,1110,0,168,0
+grid(6x6),DV + split horizon,R32-R33,104,1106,0,140,0
+grid(6x6),DV + split horizon,R11-R17,106,1108,2,151,0
+grid(6x6),"DV, no split horizon",R16-R22,106,1108,0,168,0
+grid(6x6),"DV, no split horizon",R6-R7,110,1112,0,171,0
+grid(6x6),"DV, no split horizon",R2-R3,106,1108,0,166,0
+grid(6x6),"DV, no split horizon",R17-R23,106,1108,0,153,0
+grid(6x6),"DV, no split horizon",R20-R26,108,1110,0,179,0
+grid(6x6),"DV, no split horizon",R8-R9,106,1108,0,168,0
+grid(6x6),"DV, no split horizon",R16-R17,110,1112,0,171,0
+grid(6x6),"DV, no split horizon",R9-R10,108,1110,0,168,0
+grid(6x6),"DV, no split horizon",R32-R33,104,1106,0,140,0
+grid(6x6),"DV, no split horizon",R11-R17,106,1108,0,149,0
+mesh(40),link-state,R10-R36,118.00000000000091,146.9,0,362,0
+mesh(40),link-state,R10-R25,116.80000000000018,145.1,1,362,0
+mesh(40),link-state,R16-R31,123,146.3,0,362,0
+mesh(40),link-state,R14-R36,114.69999999999982,143.8,0,362,0
+mesh(40),link-state,R5-R30,121.10000000000036,146.8,0,362,0
+mesh(40),link-state,R16-R18,115.29999999999927,148.5,0,362,0
+mesh(40),link-state,R1-R10,110.10000000000036,145.1,0,362,0
+mesh(40),link-state,R9-R28,108.5,145.7,0,362,0
+mesh(40),link-state,R4-R8,114.20000000000073,142.6,0,362,0
+mesh(40),link-state,R2-R36,114.09999999999945,144.4,0,362,0
+mesh(40),DV + split horizon,R10-R36,118.00000000000091,1138.5,0,309,0
+mesh(40),DV + split horizon,R10-R25,119.60000000000036,1140.1,2,398,0
+mesh(40),DV + split horizon,R16-R31,125.30000000000018,1145.8,0,407,0
+mesh(40),DV + split horizon,R14-R36,114.69999999999982,1135.2,0,323,0
+mesh(40),DV + split horizon,R5-R30,127.59999999999945,1148.1,4,431,0
+mesh(40),DV + split horizon,R16-R18,115.29999999999927,1135.8,0,321,0
+mesh(40),DV + split horizon,R1-R10,103.89999999999964,1124.4,0,266,0
+mesh(40),DV + split horizon,R9-R28,100,1120.5,0,252,0
+mesh(40),DV + split horizon,R4-R8,119.90000000000055,1140.4,0,362,0
+mesh(40),DV + split horizon,R2-R36,122.59999999999945,1143.1,0,485,0
+mesh(40),"DV, no split horizon",R10-R36,118.00000000000091,1138.5,0,309,0
+mesh(40),"DV, no split horizon",R10-R25,119.60000000000036,1140.1,0,433,0
+mesh(40),"DV, no split horizon",R16-R31,125.30000000000018,1145.8,0,452,0
+mesh(40),"DV, no split horizon",R14-R36,114.69999999999982,1135.2,0,323,0
+mesh(40),"DV, no split horizon",R5-R30,127.59999999999945,1148.1,0,442,0
+mesh(40),"DV, no split horizon",R16-R18,115.29999999999927,1135.8,0,321,0
+mesh(40),"DV, no split horizon",R1-R10,103.89999999999964,1124.4,0,266,0
+mesh(40),"DV, no split horizon",R9-R28,100,1120.5,0,252,0
+mesh(40),"DV, no split horizon",R4-R8,119.90000000000055,1140.4,0,369,0
+mesh(40),"DV, no split horizon",R2-R36,119.60000000000036,1140.1,0,506,0

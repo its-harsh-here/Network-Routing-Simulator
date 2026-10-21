@@ -6,6 +6,21 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
       "port": 5173
+    },
+    {
+      "name": "pages-preview",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "preview",
+        "--",
+        "--port",
+        "4173",
+        "--strictPort",
+        "--base",
+        "/network-routing-simulator/"
+      ],
+      "port": 4173
     }
   ]
 }

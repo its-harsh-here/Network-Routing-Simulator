@@ -86,9 +86,9 @@ describe('UnionFind', () => {
       const label = Array.from({ length: n }, (_, i) => i)
 
       for (let step = 0; step < 2_000; step++) {
-        const a = rng.int(0, n - 1)
-        const b = rng.int(0, n - 1)
-        if (rng.next() < 0.5) {
+        const a = rng.randomInt(0, n - 1)
+        const b = rng.randomInt(0, n - 1)
+        if (rng.uniform() < 0.5) {
           const oldLabel = label[b]
           const merged = label[a] !== oldLabel
           if (merged) {

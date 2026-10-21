@@ -136,8 +136,8 @@ describe('RingBuffer', () => {
         const buffer = new RingBuffer<number>(capacity, mode)
         const reference: number[] = []
         for (let step = 0; step < 5_000; step++) {
-          if (rng.next() < 0.55) {
-            const value = rng.int(0, 9)
+          if (rng.uniform() < 0.55) {
+            const value = rng.randomInt(0, 9)
             let accepted = true
             if (reference.length < capacity) {
               reference.push(value)

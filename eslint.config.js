@@ -16,11 +16,15 @@ export default defineConfig([
     },
   },
   {
-    files: ['src/ui/**/*.tsx', 'src/main.tsx'],
-    extends: [reactHooks.configs.flat.recommended, reactRefresh.configs.vite],
+    files: ['src/ui/**/*.{ts,tsx}', 'src/main.tsx'],
+    extends: [reactHooks.configs.flat.recommended],
   },
   {
-    files: ['tests/**/*.ts', 'bench/**/*.ts', '*.config.ts'],
+    files: ['src/ui/**/*.tsx', 'src/main.tsx'],
+    extends: [reactRefresh.configs.vite],
+  },
+  {
+    files: ['tests/**/*.ts', 'bench/**/*.ts', 'scripts/**/*.ts', '*.config.ts'],
     languageOptions: {
       globals: globals.node,
     },

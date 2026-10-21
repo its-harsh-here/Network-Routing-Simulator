@@ -117,7 +117,7 @@ describe('MinHeap', () => {
       const values: number[] = []
       for (let i = 0; i < 10_000; i++) {
         // A small range guarantees plenty of duplicates.
-        const value = rng.int(-1000, 1000)
+        const value = rng.randomInt(-1000, 1000)
         values.push(value)
         heap.push(value)
       }
@@ -131,8 +131,8 @@ describe('MinHeap', () => {
       const heap = new MinHeap(ascending)
       const reference: number[] = []
       for (let step = 0; step < 5_000; step++) {
-        if (rng.next() < 0.6) {
-          const value = rng.int(0, 100)
+        if (rng.uniform() < 0.6) {
+          const value = rng.randomInt(0, 100)
           heap.push(value)
           reference.push(value)
         } else {
@@ -143,5 +143,49 @@ describe('MinHeap', () => {
       }
       expect(firstHeapViolation(heap.toArray())).toBe(-1)
     })
+  })
+})
+
+describe('MinHeap.remove', () => {
+  it('removes a matching item and keeps the heap order', () => {
+    const heap = new MinHeap(ascending)
+    for (const n of [5, 3, 8, 1, 9, 2, 7]) heap.push(n)
+    expect(heap.remove((n) => n === 3)).toBe(3)
+    expect(firstHeapViolation(heap.toArray())).toBe(-1)
+    expect(drain(heap)).toEqual([1, 2, 5, 7, 8, 9])
+  })
+
+  it('returns undefined when nothing matches, and can remove the last item', () => {
+    const heap = new MinHeap(ascending)
+    expect(heap.remove(() => true)).toBeUndefined()
+    heap.push(4)
+    expect(heap.remove((n) => n === 99)).toBeUndefined()
+    expect(heap.remove((n) => n === 4)).toBe(4)
+    expect(heap.isEmpty()).toBe(true)
+  })
+
+  it('matches a list reference under random pushes, pops and removals', () => {
+    const rng = new Rng(616)
+    const heap = new MinHeap(ascending)
+    const reference: number[] = []
+    const problems: string[] = []
+    for (let step = 0; step < 4_000; step++) {
+      const action = rng.uniform()
+      if (action < 0.5) {
+        const value = rng.randomInt(0, 50)
+        heap.push(value)
+        reference.push(value)
+      } else if (action < 0.75) {
+        if (heap.pop() !== removeMin(reference)) problems.push(`step ${step}: pop`)
+      } else {
+        const target = rng.randomInt(0, 50)
+        const index = reference.indexOf(target)
+        const expected = index === -1 ? undefined : reference.splice(index, 1)[0]
+        if (heap.remove((n) => n === target) !== expected) problems.push(`step ${step}: remove`)
+      }
+      if (heap.size !== reference.length) problems.push(`step ${step}: size`)
+    }
+    if (firstHeapViolation(heap.toArray()) !== -1) problems.push('heap order broken')
+    expect(problems).toEqual([])
   })
 })
