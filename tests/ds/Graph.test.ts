@@ -256,10 +256,10 @@ describe('Graph', () => {
       // Reference: a set of nodes and a list of edges. Neighbours are found by scanning the list.
       const refNodes = new Set<string>()
       let refEdges: { id: string; a: string; b: string; up: boolean }[] = []
-      const pick = () => pool[rng.int(0, pool.length - 1)]
+      const pick = () => pool[rng.randomInt(0, pool.length - 1)]
 
       for (let step = 0; step < 3_000; step++) {
-        const action = rng.int(0, 4)
+        const action = rng.randomInt(0, 4)
         if (action === 0) {
           const node = pick()
           expect(graph.addNode(node)).toBe(!refNodes.has(node))
@@ -282,7 +282,7 @@ describe('Graph', () => {
             expect(() => graph.addEdge(a, b)).toThrow()
           }
         } else if (refEdges.length > 0) {
-          const target = refEdges[rng.int(0, refEdges.length - 1)]
+          const target = refEdges[rng.randomInt(0, refEdges.length - 1)]
           if (action === 3) {
             expect(graph.removeEdge(target.id)).toBe(true)
             refEdges = refEdges.filter((edge) => edge.id !== target.id)

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420" font-family="system-ui, -apple-system, Segoe UI, sans-serif">
+<rect width="720" height="420" fill="#ffffff"/>
+<line x1="78" y1="362" x2="550" y2="362" stroke="#e2e8f0"/>
+<text x="70" y="366" text-anchor="end" font-size="11" fill="#64748b">0.1 ms</text>
+<line x1="78" y1="298.8" x2="550" y2="298.8" stroke="#e2e8f0"/>
+<text x="70" y="302.8" text-anchor="end" font-size="11" fill="#64748b">1 ms</text>
+<line x1="78" y1="235.6" x2="550" y2="235.6" stroke="#e2e8f0"/>
+<text x="70" y="239.6" text-anchor="end" font-size="11" fill="#64748b">10 ms</text>
+<line x1="78" y1="172.4" x2="550" y2="172.4" stroke="#e2e8f0"/>
+<text x="70" y="176.4" text-anchor="end" font-size="11" fill="#64748b">100 ms</text>
+<line x1="78" y1="109.19999999999999" x2="550" y2="109.19999999999999" stroke="#e2e8f0"/>
+<text x="70" y="113.19999999999999" text-anchor="end" font-size="11" fill="#64748b">1k ms</text>
+<line x1="78" y1="46" x2="550" y2="46" stroke="#e2e8f0"/>
+<text x="70" y="50" text-anchor="end" font-size="11" fill="#64748b">10k ms</text>
+<line x1="78" y1="46" x2="78" y2="362" stroke="#e2e8f0"/>
+<text x="78" y="380" text-anchor="middle" font-size="11" fill="#64748b">100</text>
+<line x1="221.37659338134856" y1="46" x2="221.37659338134856" y2="362" stroke="#e2e8f0"/>
+<text x="221.37659338134856" y="380" text-anchor="middle" font-size="11" fill="#64748b">500</text>
+<line x1="283.12553112711623" y1="46" x2="283.12553112711623" y2="362" stroke="#e2e8f0"/>
+<text x="283.12553112711623" y="380" text-anchor="middle" font-size="11" fill="#64748b">1k</text>
+<line x1="426.5021245084647" y1="46" x2="426.5021245084647" y2="362" stroke="#e2e8f0"/>
+<text x="426.5021245084647" y="380" text-anchor="middle" font-size="11" fill="#64748b">5k</text>
+<line x1="488.2510622542324" y1="46" x2="488.2510622542324" y2="362" stroke="#e2e8f0"/>
+<text x="488.2510622542324" y="380" text-anchor="middle" font-size="11" fill="#64748b">10k</text>
+<line x1="550" y1="46" x2="550" y2="362" stroke="#e2e8f0"/>
+<text x="550" y="380" text-anchor="middle" font-size="11" fill="#64748b">20k</text>
+<polyline points="78.0,339.9 221.4,310.4 283.1,306.8 426.5,244.1 488.3,225.2 550.0,198.1" fill="none" stroke="#0284c7" stroke-width="2.5"/>
+<circle cx="78.0" cy="339.9" r="4" fill="#0284c7"><title>binary heap: 100 -&gt; 0.224 ms</title></circle>
+<circle cx="221.4" cy="310.4" r="4" fill="#0284c7"><title>binary heap: 500 -&gt; 0.655 ms</title></circle>
+<circle cx="283.1" cy="306.8" r="4" fill="#0284c7"><title>binary heap: 1k -&gt; 0.746 ms</title></circle>
+<circle cx="426.5" cy="244.1" r="4" fill="#0284c7"><title>binary heap: 5k -&gt; 7.341 ms</title></circle>
+<circle cx="488.3" cy="225.2" r="4" fill="#0284c7"><title>binary heap: 10k -&gt; 14.595 ms</title></circle>
+<circle cx="550.0" cy="198.1" r="4" fill="#0284c7"><title>binary heap: 20k -&gt; 39.179 ms</title></circle>
+<line x1="568" y1="66" x2="590" y2="66" stroke="#0284c7" stroke-width="3"/>
+<text x="596" y="70" font-size="12" fill="#1e293b">binary heap</text>
+<polyline points="78.0,319.0 221.4,295.3 283.1,267.9 426.5,174.0 488.3,134.0 550.0,99.7" fill="none" stroke="#dc2626" stroke-width="2.5"/>
+<circle cx="78.0" cy="319.0" r="4" fill="#dc2626"><title>naive O(V²): 100 -&gt; 0.479 ms</title></circle>
+<circle cx="221.4" cy="295.3" r="4" fill="#dc2626"><title>naive O(V²): 500 -&gt; 1.136 ms</title></circle>
+<circle cx="283.1" cy="267.9" r="4" fill="#dc2626"><title>naive O(V²): 1k -&gt; 3.088 ms</title></circle>
+<circle cx="426.5" cy="174.0" r="4" fill="#dc2626"><title>naive O(V²): 5k -&gt; 94.248 ms</title></circle>
+<circle cx="488.3" cy="134.0" r="4" fill="#dc2626"><title>naive O(V²): 10k -&gt; 404.722 ms</title></circle>
+<circle cx="550.0" cy="99.7" r="4" fill="#dc2626"><title>naive O(V²): 20k -&gt; 1413.154 ms</title></circle>
+<line x1="568" y1="88" x2="590" y2="88" stroke="#dc2626" stroke-width="3"/>
+<text x="596" y="92" font-size="12" fill="#1e293b">naive O(V²)</text>
+<rect x="78" y="46" width="472" height="316" fill="none" stroke="#64748b"/>
+<text x="78" y="26" font-size="15" font-weight="600" fill="#1e293b">Dijkstra: median time from one source (log-log)</text>
+<text x="314" y="406" text-anchor="middle" font-size="12" fill="#1e293b">routers V (average degree 4)</text>
+<text transform="translate(18 204) rotate(-90)" text-anchor="middle" font-size="12" fill="#1e293b">time</text>
+</svg>

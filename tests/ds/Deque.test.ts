@@ -99,9 +99,9 @@ describe('Deque', () => {
       for (let step = 0; step < 10_000; step++) {
         // Mostly pushes in the first half (so the deque grows several times), mostly pops after.
         const pushChance = step < 5_000 ? 0.7 : 0.3
-        const atFront = rng.next() < 0.5
-        if (rng.next() < pushChance) {
-          const value = rng.int(0, 1000)
+        const atFront = rng.uniform() < 0.5
+        if (rng.uniform() < pushChance) {
+          const value = rng.randomInt(0, 1000)
           if (atFront) {
             deque.pushFront(value)
             reference.unshift(value)

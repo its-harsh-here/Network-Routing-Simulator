@@ -73,6 +73,28 @@ export class MinHeap<T> {
     return [...this.items]
   }
 
+  /**
+   * Removes the first item (in heap order) for which `matches` is true, and returns it, or
+   * undefined if none matches. The last leaf takes the removed item's place and is sifted up or
+   * down, whichever restores the heap order.
+   * Time: O(n) to find the item, plus O(log n) to repair the heap.
+   */
+  remove(matches: (item: T) => boolean): T | undefined {
+    const index = this.items.findIndex(matches)
+    if (index === -1) return undefined
+    const removed = this.items[index]
+    const last = this.items.pop() as T
+    if (index < this.items.length) {
+      this.items[index] = last
+      // The moved leaf may be smaller than its new parent (move it up) or larger than one of
+      // its new children (move it down); it cannot be both.
+      const parent = Math.floor((index - 1) / 2)
+      if (index > 0 && this.compare(last, this.items[parent]) < 0) this.siftUp(index)
+      else this.siftDown(index)
+    }
+    return removed
+  }
+
   /** Swaps the item at `index` with its parent until the parent is not greater. O(log n). */
   private siftUp(index: number): void {
     let child = index
